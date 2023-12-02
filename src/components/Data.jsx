@@ -3,6 +3,7 @@ import {ArcElement, Chart as ChartJS, Legend, Tooltip} from 'chart.js';
 import {Pie} from "react-chartjs-2";
 import {RotateLoader} from "react-spinners"
 
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 
@@ -11,7 +12,6 @@ export const Data = () => {
     const [data, setData] = useState([])
     const [percentage, setPercentage] = useState({})
     const [isLoading, setIsLoading] = useState(false)
-    const [err, setErr] = useState("")
 
     useEffect(() => {
         try {
@@ -31,7 +31,6 @@ export const Data = () => {
             fetchPostHandler()
 
         } catch (e) {
-            setErr("Check your Internet Connection or The API Endpoint you are fetching from.")
         }
 
     }, [])
