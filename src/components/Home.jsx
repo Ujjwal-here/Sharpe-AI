@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 export const Home = () => {
     return (
         <div className="flex justify-center items-center my-44">
@@ -11,12 +13,12 @@ export const Home = () => {
                        applications, such as real-time chat systems, NFT generators, and COVID assistance platforms.</p>
                </div>
                 <div className="flex justify-center space-x-6">
-                    <a href="#"
+                    <Link to="/transaction" href="#"
                        className="bg-[#FF592C] hover:bg-blue-600 text-white px-6 py-3 rounded-full text-sm transition duration-300">Transaction
-                        Page</a>
-                    <a href="#"
+                        Page</Link>
+                    <Link to="/data" href="#"
                        className="bg-[#FF592C] hover:bg-blue-600 text-white px-6 py-3 rounded-full text-sm transition duration-300">Data
-                        Page</a>
+                        Page</Link>
                 </div>
             </div>
         </div>
