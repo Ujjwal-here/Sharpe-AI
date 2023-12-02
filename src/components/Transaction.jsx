@@ -15,6 +15,7 @@ export const Transaction = () => {
         setAmount(e.target.value)
    }
 
+   //validate inputs
     const validateForm = () => {
         let valid = true;
         const newErrors = {};
@@ -34,6 +35,10 @@ export const Transaction = () => {
             newErrors.amount = 'Please enter an amount';
             valid = false;
         }
+        else if (parseInt(amount) > 10000 || parseInt(amount) < 1){
+            newErrors.amount = 'Amount Should be between 1 and 10,000';
+            valid = false;
+        }
 
         setErr(newErrors);
         return valid;
@@ -42,6 +47,7 @@ export const Transaction = () => {
     async function onSubmitHandler(e) {
         e.preventDefault()
         if (validateForm()) {
+            // Add data to firestore
             await addDoc(collection(db, "wallet"), {
                 walletAddress,
                 amount
