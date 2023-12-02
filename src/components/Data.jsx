@@ -15,6 +15,7 @@ export const Data = () => {
 
     useEffect(() => {
         try {
+            //fetch data from end point
             async function fetchPostHandler() {
                 setIsLoading(true)
                 const response = await fetch("https://jsonplaceholder.typicode.com/posts")
@@ -32,6 +33,7 @@ export const Data = () => {
 
         } catch (e) {
         }
+
 
     }, [])
 
@@ -59,7 +61,7 @@ export const Data = () => {
             </div> :
             <div className="flex justify-between">
 
-                <div className="overflow-x-auto mx-20 my-24 items-center">
+                <div className="overflow-x-auto md:mx-10 mx-20 my-24 items-center">
                     <table className="table-auto w-full border-collapse border border-slate-800">
                         <thead>
                         <tr className="bg-gray-200">
@@ -79,7 +81,7 @@ export const Data = () => {
                         </tbody>
                     </table>
                 </div>
-                <div className="mx-20 my-24">
+                <div className="md:mx-10 mx-20 my-24">
                     <Pie data={pieData}/>;
                 </div>
             </div>
