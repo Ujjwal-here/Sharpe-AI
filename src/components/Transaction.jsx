@@ -7,6 +7,7 @@ export const Transaction = () => {
     const [walletAddress,setWalletAddress]=useState("")
     const [amount,setAmount]=useState("")
     const [err, setErr] = useState({})
+    const [successMessage,setSuccessMessage]=useState("")
 
    function walletAddressHandler(e){
         setWalletAddress(e.target.value)
@@ -52,6 +53,9 @@ export const Transaction = () => {
                 walletAddress,
                 amount
             })
+            setSuccessMessage("Data Successfully Stored")
+            setAmount("")
+            setWalletAddress("")
         }
     }
 
@@ -75,8 +79,9 @@ export const Transaction = () => {
                 <div>
                     <button type="submit"
                             className="bg-[#FF592C] hover:bg-blue-600 text-white px-6 py-3 rounded-md text-sm transition duration-300">
-                        Submit
+                        {successMessage? "Submitted" : "Submit"}
                     </button>
+                    {successMessage && <p className="my-4 text-green-400">{successMessage}</p>}
                 </div>
             </form>
         </div>

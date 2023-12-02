@@ -56,7 +56,7 @@ export const Data = () => {
         ],
     }
     return (
-        isLoading ? <div className="text-center my-96">
+        isLoading ? <div className="text-center m-48">
                 <RotateLoader size="50px" color="white"/>
             </div> :
             <div className="flex justify-between">
