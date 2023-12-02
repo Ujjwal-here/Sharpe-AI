@@ -61,7 +61,7 @@ export const Data = () => {
             </div> :
             <div className="flex justify-between">
 
-                <div className="overflow-x-auto md:mx-10 mx-20 my-24 items-center">
+                <div className="overflow-x-auto md:mx-10 lg:mx-24 my-24 items-center">
                     <table className="table-auto w-full border-collapse border border-slate-800">
                         <thead>
                         <tr className="bg-gray-200">
@@ -81,7 +81,7 @@ export const Data = () => {
                         </tbody>
                     </table>
                 </div>
-                <div className="md:mx-10 mx-20 my-24">
+                <div className="md:mx-10 lg:mx-24 my-24">
                     <Pie data={pieData}/>;
                 </div>
             </div>
